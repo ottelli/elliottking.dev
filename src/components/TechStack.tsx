@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react"
 
 const TechStack = (props: { items: string[]; onlyIcons?: boolean }) => {
@@ -13,7 +12,7 @@ const TechStack = (props: { items: string[]; onlyIcons?: boolean }) => {
           onMouseLeave={() => setHover(null)}
         >
           <div className='flex h-[24px] w-[24px] items-center justify-center'>
-            <Image
+            <img
               src={`/assets/stackIcons/${IconFiles[name]}`}
               alt={"#"}
               className='m-0'
