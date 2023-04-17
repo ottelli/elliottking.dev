@@ -18,8 +18,6 @@ const App = () => {
       <Header />
       <Reel entries={reel_text} />
       <Timeline entries={timeline_text} />
-      <PrimeAction />
-      <Buffer />
       <ContactForm />
       <Footer />
     </div>
@@ -27,10 +25,3 @@ const App = () => {
 }
 
 export default App
-
-const PrimeAction = () => {
-  return <section id='action'></section>
-}
-const Buffer = () => {
-  return <section id='buffer'></section>
-}
