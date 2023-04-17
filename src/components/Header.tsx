@@ -1,7 +1,9 @@
+import Image from "next/image"
+
 const Header = () => {
   return (
     <header className='prose relative flex max-w-none flex-col items-center bg-white py-20 dark:bg-slate-500'>
-      <svg
+      {/* <svg
         xmlns='http://www.w3.org/2000/svg'
         width='128'
         height='128'
@@ -13,10 +15,12 @@ const Header = () => {
           fillRule='evenodd'
           d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z'
         />
-      </svg>
+      </svg> */}
+      <Image src="/assets/profile-photo-round.png" alt="" width={160} height={160} className="mb-0" />
       <h1 className='mt-3 font-serif text-[2.5rem] font-light'>Elliott King</h1>
       <h5 className='mt-3 text-center italic text-slate-400 dark:text-slate-200'>
-        Sports Engineer <b>{"//"}</b> Full-Stack Developer
+        {/* Sports Engineer <b>{"//"}</b> Full-Stack Developer */}
+        Full-Stack Developer <b>{"//"}</b> Sports Engineer
       </h5>
       <div className='mt-3 flex flex-row'>
         <a href='https://github.com/ottelli'>
