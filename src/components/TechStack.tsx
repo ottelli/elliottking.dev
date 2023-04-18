@@ -7,7 +7,7 @@ const TechStack = (props: { items: string[]; onlyIcons?: boolean }) => {
       {props.items.map((name, index) => (
         <div
           key={name + index}
-          className='prose relative m-1 flex flex-row items-center overflow-visible rounded-md bg-gradient-to-tr from-violet-600 to-violet-400 py-1 px-2 text-slate-50 shadow-md shadow-violet-400 dark:text-slate-50 dark:shadow-slate-900'
+          className='prose relative m-1 flex flex-row items-center overflow-visible rounded-md bg-gradient-to-tr from-violet-600 to-violet-400 px-2 py-1 text-slate-50 shadow-md shadow-violet-400 dark:text-slate-50 dark:shadow-slate-900'
           onMouseEnter={() => setHover(name)}
           onMouseLeave={() => setHover(null)}
         >
@@ -23,7 +23,7 @@ const TechStack = (props: { items: string[]; onlyIcons?: boolean }) => {
           {props.onlyIcons ? (
             // Tooltip
             <h6
-              className={`absolute -top-9 left-0 m-0 rounded-md bg-slate-700 py-0 px-2 font-bold text-white ${
+              className={`absolute -top-9 left-0 m-0 rounded-md bg-slate-700 px-2 py-0 font-bold text-white ${
                 hover === name ? "z-10 block" : "hidden"
               }`}
             >

@@ -24,7 +24,7 @@ interface ITimelineEntryStatus {
 
 const Timeline = ({ entries }: { entries: ITimelineEntry[] }) => {
   return (
-    <section className='prose-headings prose-p prose dark:prose-invert flex w-full max-w-none flex-col items-center overflow-hidden bg-white px-4 py-8 dark:bg-slate-900'>
+    <section className='prose-headings prose-p prose flex w-full max-w-none flex-col items-center overflow-hidden bg-white px-4 py-8 dark:prose-invert dark:bg-slate-900'>
       <h1>Projects</h1>
       {entries.map((entry, idx) => {
         if (
@@ -34,7 +34,11 @@ const Timeline = ({ entries }: { entries: ITimelineEntry[] }) => {
         ) {
           return (
             <ErrorBoundary key={"Error Rendering: " + entry.title + idx}>
-              <TimelineCard key={entry.title + idx} index={idx} entry={entry} />
+              <TimelineCard
+                key={entry.title + idx}
+                index={idx}
+                entry={entry}
+              />
             </ErrorBoundary>
           )
         }
@@ -88,28 +92,23 @@ const TimelineCard = ({
         </div>
       )}
 
-      <div className="flex flex-row justify-start items-center w-full">
+      <div className='flex w-full flex-row items-center justify-start'>
         <h4 className='w-32 justify-self-center rounded bg-gradient-to-tr from-green-700 to-green-500 p-1 text-center font-normal text-white shadow-md shadow-green-100 dark:shadow-slate-900'>
           {entry.date}
         </h4>
         <h2 className='ml-4 font-normal dark:text-slate-800'>{entry.title}</h2>
       </div>
 
-      <div className="flex flex-row flex-wrap justify-between items-center w-full">
+      <div className='flex w-full flex-row flex-wrap items-center justify-between'>
         <h3 className='text-center font-light italic dark:text-slate-800'>
           {entry.description}
         </h3>
-        {entry.link && <a href={`https://${entry.link}`}>
-          <h6 className="">{entry.link}</h6>
-        </a>}
+        {entry.link && (
+          <a href={`https://${entry.link}`}>
+            <h6 className=''>{entry.link}</h6>
+          </a>
+        )}
       </div>
-
-      {/* <h6
-        className='m-4'
-        dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize(entry.brief),
-        }}
-      ></h6> */}
 
       <div className='m-4'>
         <TechStack items={entry.stack} />
@@ -126,7 +125,10 @@ const TimelineCard = ({
           </div>
         </div>
       )}
-      <ToggleDropdown isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
+      <ToggleDropdown
+        isOpen={isOpen}
+        onClick={() => setOpen(!isOpen)}
+      />
     </div>
   )
 }
@@ -138,7 +140,10 @@ const Method = (props: ITimelineEntryMethod) => {
     <div className='prose flex h-full w-full max-w-none flex-col'>
       {Object.entries(props).map(([name, text]) => (
         <div key={id + name + "-container"}>
-          <h5 key={id + name + "-title"} className='font-bold italic'>
+          <h5
+            key={id + name + "-title"}
+            className='font-bold italic'
+          >
             {name}
           </h5>
           <p
@@ -161,7 +166,10 @@ const ProjectStatus = (props: ITimelineEntryStatus) => {
           {text instanceof Array ? (
             <ul className='m-0 list-inside list-none p-0'>
               {text.map((point, i) => (
-                <li key={i} className='relative flex pl-[20px]'>
+                <li
+                  key={i}
+                  className='relative flex pl-[20px]'
+                >
                   <svg
                     className='absolute left-0 top-[6px]'
                     fill='currentColor'

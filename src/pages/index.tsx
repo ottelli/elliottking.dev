@@ -13,7 +13,10 @@ const App = () => {
     <div className='flex flex-col'>
       <Head>
         <title>Elliott King | Portfolio</title>
-        <meta property="description" content="Portfolio for Elliott King"/>
+        <meta
+          property='description'
+          content='Portfolio for Elliott King'
+        />
       </Head>
       <Header />
       <Reel entries={reel_text} />
@@ -25,3 +28,4 @@ const App = () => {
 }
 
 export default App
+
