@@ -1,8 +1,8 @@
-import DOMPurify from "isomorphic-dompurify"
-import { useId, useState } from "react"
+import { useState } from "react"
 import useIntersectionObserver from "../hooks/useIntersectionObserver"
 import ErrorBoundary from "../utils/ErrorBoundary"
 import TechStack from "./TechStack"
+import { ITimelineEntryProse, Prose, ToggleDropdown } from "./TimelineCardParts"
 
 export interface ITimelineEntry {
   title: string
@@ -10,16 +10,7 @@ export interface ITimelineEntry {
   description: string
   link?: string
   stack: string[]
-  method: ITimelineEntryMethod
-  status: ITimelineEntryStatus
-}
-
-interface ITimelineEntryMethod {
-  [step: string]: string
-}
-
-interface ITimelineEntryStatus {
-  [section: string]: string | string[]
+  points: ITimelineEntrySteps
 }
 
 const Timeline = ({ entries }: { entries: ITimelineEntry[] }) => {
@@ -61,22 +52,18 @@ const TimelineCard = ({
     rootMargin: "9999px 9999px 0px 0px",
     threshold: 0.3,
   })
-
   const [isOpen, setOpen] = useState(false)
 
   return (
     <div
       id={`card-${entry.title}`}
-      key={`card-${entry.title}-${index}`}
       ref={containerRef}
-      className={`mx-0 my-4 flex w-full 
-      transform flex-col items-center rounded-3xl p-4 transition duration-500 sm:w-10/12 md:w-8/12
-      ${
-        isVisible || index === 0
-          ? "-transform-x-1/2 dark:via-indigp-200 bg-gradient-to-tr from-purple-200 via-indigo-100 to-blue-100 opacity-100 shadow-xl dark:from-purple-300 dark:to-blue-300"
+      className={`mx-0 my-4 flex w-full transform flex-col items-center rounded-3xl p-4 transition duration-500 sm:w-10/12 md:w-8/12 
+        ${isVisible || index === 0
+          ? "-transform-x-1/2 dark:via-indigp-200 bg-gradient-to-tr from-purple-200 via-indigo-100 to-blue-100 opacity-100 shadow-xl dark:from-purple-800 dark:via-indigo-900 dark:to-blue-900"
           : "translate-x-1/2 bg-white opacity-0"
-      }
-    `}
+        }
+      `}
     >
       {/* 'Pinned' Project */}
       {index === 0 && (
@@ -91,147 +78,30 @@ const TimelineCard = ({
           </svg>
         </div>
       )}
-
-      <div className='flex w-full flex-row items-center justify-start'>
+      <div className='flex flex-row w-full items-center'>
         <h4 className='w-32 justify-self-center rounded bg-gradient-to-tr from-green-700 to-green-500 p-1 text-center font-normal text-white shadow-md shadow-green-100 dark:shadow-slate-900'>
           {entry.date}
         </h4>
-        <h2 className='ml-4 font-normal dark:text-slate-800'>{entry.title}</h2>
+        <div className='flex flex-col ml-4'>
+          <h2>{entry.title}</h2>
+          {entry.link && (
+            <a href={`https://${entry.link}`}>
+              <h6 className=''>{entry.link}</h6>
+            </a>
+          )}
+        </div>
       </div>
-
-      <div className='flex w-full flex-row flex-wrap items-center justify-between'>
-        <h3 className='text-center font-light italic dark:text-slate-800'>
-          {entry.description}
-        </h3>
-        {entry.link && (
-          <a href={`https://${entry.link}`}>
-            <h6 className=''>{entry.link}</h6>
-          </a>
-        )}
-      </div>
-
-      <div className='m-4'>
+      <h3 className='m-4 text-center font-normal italic'>
+        {entry.description}
+      </h3>
+      <div className='m-4 mt-0'>
         <TechStack items={entry.stack} />
       </div>
-
-      {isOpen && (
-        <div className='flex w-full max-w-none flex-row flex-wrap items-center justify-center'>
-          <div className='mx-4 h-full md:w-5/12'>
-            <Method {...entry.method} />
-          </div>
-
-          <div className='mx-4 h-full md:w-5/12'>
-            <ProjectStatus {...entry.status} />
-          </div>
-        </div>
-      )}
+      {isOpen && <Prose {...entry.points} />}
       <ToggleDropdown
         isOpen={isOpen}
         onClick={() => setOpen(!isOpen)}
       />
     </div>
-  )
-}
-
-const Method = (props: ITimelineEntryMethod) => {
-  const id = useId()
-
-  return (
-    <div className='prose flex h-full w-full max-w-none flex-col'>
-      {Object.entries(props).map(([name, text]) => (
-        <div key={id + name + "-container"}>
-          <h5
-            key={id + name + "-title"}
-            className='font-bold italic'
-          >
-            {name}
-          </h5>
-          <p
-            key={id + name + "-text"}
-            className='mt-0'
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }}
-          ></p>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-const ProjectStatus = (props: ITimelineEntryStatus) => {
-  return (
-    <div className='prose flex h-full w-full max-w-none flex-col border-slate-400 dark:border-slate-600'>
-      {Object.entries(props).map(([name, text]) => (
-        <div key={name}>
-          <h5 className='font-bold'>{name}</h5>
-          {text instanceof Array ? (
-            <ul className='m-0 list-inside list-none p-0'>
-              {text.map((point, i) => (
-                <li
-                  key={i}
-                  className='relative flex pl-[20px]'
-                >
-                  <svg
-                    className='absolute left-0 top-[6px]'
-                    fill='currentColor'
-                    xmlns='http://www.w3.org/2000/svg'
-                    viewBox='0 0 384 512'
-                    width='12'
-                  >
-                    <path d='M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z' />
-                  </svg>
-                  <p
-                    className='m-0'
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(point),
-                    }}
-                  ></p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p
-              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }}
-            ></p>
-          )}
-        </div>
-      ))}
-    </div>
-  )
-}
-
-const ToggleDropdown = (props: { isOpen: boolean; onClick: () => void }) => {
-  return (
-    <span
-      className='col-start-1 col-end-6 flex h-8 flex-row justify-center'
-      onClick={props.onClick}
-    >
-      {props.isOpen ? (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='24'
-          height='24'
-          fill='currentColor'
-          viewBox='0 0 16 16'
-        >
-          <path
-            fillRule='evenodd'
-            d='M7.776 5.553a.5.5 0 0 1 .448 0l6 3a.5.5 0 1 1-.448.894L8 6.56 2.224 9.447a.5.5 0 1 1-.448-.894l6-3z'
-          />
-        </svg>
-      ) : (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='24'
-          height='24'
-          fill='currentColor'
-          viewBox='0 0 16 16'
-        >
-          <path
-            fillRule='evenodd'
-            d='M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z'
-          />
-        </svg>
-      )}
-    </span>
   )
 }
