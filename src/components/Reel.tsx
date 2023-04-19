@@ -1,6 +1,6 @@
 import DOMPurify from "isomorphic-dompurify"
 import ErrorBoundary from "../utils/ErrorBoundary"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 
 interface IReelCard {
   title?: string
@@ -9,7 +9,6 @@ interface IReelCard {
 
 const Reel = (props: { entries: IReelCard[] }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
-  const [clicked, setClicked] = useState(false)
 
   function scrollByAmount(amount: number) {
     if (scrollContainerRef.current) {
@@ -23,12 +22,12 @@ const Reel = (props: { entries: IReelCard[] }) => {
   return (
     <section
       id='reel'
-      className='relative flex flex-row overflow-hidden'
+      className='relative flex flex-row'
     >
       <div
         id='outer-scroll-container'
         ref={scrollContainerRef}
-        className='flex flex-row overflow-scroll bg-blue-100  dark:bg-slate-800 '
+        className='flex w-full flex-row overflow-scroll bg-blue-100  dark:bg-slate-800'
       >
         <div
           id='inner-scroll-container'
@@ -65,10 +64,7 @@ const Reel = (props: { entries: IReelCard[] }) => {
       </button>
       <button
         className={`absolute bottom-6 right-1/3 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-md dark:bg-slate-400`}
-        onClick={() => {
-          scrollByAmount(350)
-          setClicked(true)
-        }}
+        onClick={() => scrollByAmount(350)}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
