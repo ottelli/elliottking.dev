@@ -7,26 +7,20 @@ export interface ITimelineEntryProse {
 
 export const Prose = (props: ITimelineEntryProse) => {
   const id = useId()
-  const isArray = (item:any):boolean => {
-    if (item instanceof Object) {
-      return true
-    }
-  }
 
   return (
     <div>
       {Object.entries(props).map(([key, entry]) => (
-        <div key={id + key + "container"} className="mx-4">
-          <h5
-            className='font-bold italic'
-          >
-            {key}
-          </h5>
-          {
-            (isArray(entry)) 
-            ? <List items={entry} /> 
-            : <Paragraph text={entry} /> 
-          }
+        <div
+          key={id + key + "container"}
+          className='mx-4'
+        >
+          <h5 className='font-bold italic'>{key}</h5>
+          {typeof entry === "string" ? (
+            <Paragraph text={entry} />
+          ) : (
+            <List items={entry} />
+          )}
         </div>
       ))}
     </div>
@@ -36,13 +30,13 @@ export const Prose = (props: ITimelineEntryProse) => {
 const List = ({ items }: { items: string[] }) => {
   return (
     <ul>
-      {items.map((text,idx) => (
+      {items.map((text, idx) => (
         <li
           key={idx}
           className='relative flex pl-[20px]'
         >
           <svg
-            className='absolute left-0 top-[2px]'
+            className='absolute left-0 top-[4px]'
             fill='currentColor'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 384 512'

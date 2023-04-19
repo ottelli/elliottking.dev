@@ -10,7 +10,7 @@ export interface ITimelineEntry {
   description: string
   link?: string
   stack: string[]
-  points: ITimelineEntrySteps
+  points: ITimelineEntryProse
 }
 
 const Timeline = ({ entries }: { entries: ITimelineEntry[] }) => {
