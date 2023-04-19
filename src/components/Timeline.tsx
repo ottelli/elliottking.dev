@@ -19,9 +19,12 @@ const Timeline = ({ entries }: { entries: ITimelineEntry[] }) => {
       <h1>Projects</h1>
       {entries.map((entry, idx) => {
         if (
-          ["Persistence", "Rho Technologies", "First Python Code"].includes(
-            entry.title
-          )
+          [
+            "Persistence",
+            "Rho Technologies",
+            "First Python Code",
+            "Table Tennis Simulator",
+          ].includes(entry.title)
         ) {
           return (
             <ErrorBoundary key={"Error Rendering: " + entry.title + idx}>

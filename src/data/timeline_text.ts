@@ -4,9 +4,19 @@ export const timeline_text: ITimelineEntry[] = [
   {
     title: "Persistence",
     date: "Jan 2022 - ongoing",
-    description: "Health and fitness app, with personal dashboard, interactive calendar, and data-driven insights.",
+    description:
+      "Health and fitness app, with personal dashboard, interactive calendar, and data-driven insights.",
     link: "www.trainpersistent.com/about",
-    stack: ["Go", "Python", "Flask", "Vite", "TypeScript", "React", "Redux", "Sass"],
+    stack: [
+      "Go",
+      "Python",
+      "Flask",
+      "Vite",
+      "TypeScript",
+      "React",
+      "Redux",
+      "Sass",
+    ],
     points: {
       About:
         "In my journey with Persistence, I have grown the project from a Matlab script analysing watch data I wrote in university, to static HTML, to a fully responsive progressive web app. As the project's complexity increased, I evolved the architecture and embraced new tools and technologies, learning on the job to take the project to the each new level. This process required extensive research, planning, iterative development, and effective utilization of my increasingly diverse skill set. Consequently, I have continually improved user experience across devices and platforms, striving to deliver a quality product that meets user expectations and the high standards I set myself.<br/><br/>Working independently, I manage the full lifecycle of product development, from ideation and planning to implementation and maintenance. This involves overseeing the architecture of the application, thinking deeply about the user experience, implementing best practices for optimal performance and secure authentication, while strategically allocating time to each aspect.",
@@ -53,7 +63,7 @@ export const timeline_text: ITimelineEntry[] = [
     points: {
       About:
         "I thoroughly enjoyed learning to program at university, but we had used Matlab and my license soon ran out after graduating. I settled on Python and always learn better with projects so set about coding the card game that me and my friends were always playing. Having had no frame of reference before, I soon realised why Matlab is ranked as the least loved programming language in the Stack Overflow developer survey.",
-      'Gameplay & Interface':
+      "Gameplay & Interface":
         "Text based on the command line. All players on one machine, with the screen cleared between each. Players are told the last cards played and have their hand, split into multiples, sorted by value, shown to them as an indexed list. They input an index to play their turn. Based on the game state there may be follow up decisions, like splitting cards or using the joker.",
       Conclusion: [
         "I achieved what I set out to do! I declared this project a success when my friends and I were playing and began to feel some of the tension that exists in our real games...",
@@ -71,7 +81,8 @@ export const timeline_text: ITimelineEntry[] = [
     description: "Masters thesis project",
     stack: ["IMU", "MATLAB"],
     points: {
-      'Research Question': "Can non-linearities in gait predict running economy?",
+      "Research Question":
+        "Can non-linearities in gait predict running economy?",
       Experiment: "Recruited [n] people. Gas analysis + Gait analysis.",
       Analysis: "Vectorisation. DFA. SampEnt.",
       Conclusion: [
@@ -87,8 +98,8 @@ export const timeline_text: ITimelineEntry[] = [
     description: "Prototype and business plan",
     stack: ["Android", "MATLAB"],
     points: {
-      'Assigned Task': "Help a sports injury, with technology.",
-      'Chosen Design Brief': "How to prevent back injuries from deadlifting?",
+      "Assigned Task": "Help a sports injury, with technology.",
+      "Chosen Design Brief": "How to prevent back injuries from deadlifting?",
       Solution:
         "A camera purchased by gyms, placed to the side when deadlifting. Together with an Android app to give live feedback and record sessions.",
       "Team Role": "I handled the financial plan and app design",
@@ -99,18 +110,21 @@ export const timeline_text: ITimelineEntry[] = [
   {
     title: "Table Tennis Simulator",
     date: "Dec 2017",
+    link: "github.com/ottelli/table-tennis-physics",
     description: "Physics model with GUI in Matlab",
     stack: ["MATLAB"],
     points: {
-      'Assigned Task': "Simulate and evaluate the effects of a change to a rule in a sport.",
-      'Chosen Rearch Question': "Would Table Tennis be more entertaining on a bigger table?",
-      Simulation:
-        "The physics of Tabble Tennis can be divied into two states: flight and impact. In flight, the trajectory of a [x]cm, [y]g smooth projectile is strongly subjected to spin forces, Magnus forces, [...]. The hardness of both table and ball contribute to one of the briefest impacts in sport, but still surface and deformation effects are highly influential.",
-      GUI: "From starting position, strike angle and outgoing velocity, animate and trace the balls flight across the table, then then display flight time and end velocity at the opponent.",
-      Conclusion: ["Drop Shots", "More time", "Running game"],
-      Reflection: [
-        "Looked great on workstation, almost killed my laptop.",
-        "Got highest mark on assignment.",
+      "Assigned Task":
+        "Simulate and evaluate the effects of a change to a rule in a sport.",
+      "Chosen Rearch Question":
+        "Would Table Tennis be more entertaining on a bigger table?",
+      Model:
+        "The physics of Tabble Tennis can be divied into two states: flight and impact. In flight, the trajectory of a small, smooth projectile is strongly subjected to spin forces, while also going through a ballistic transition. The hardness of both table and ball contribute to one of the briefest impacts in sport, but still surface and deformation effects are influential.",
+      Program:
+        "From starting position, strike angle and outgoing velocity, animate and trace the balls flight across the table, then displays flight time and end velocity at the end of the table.",
+      Conclusion: [
+        "Looked great on a workstation, almost killed my laptop..",
+        "Together with the accompanying report, the model recieved 90/100 (70 for a Distinction grade).",
       ],
     },
   },
@@ -120,7 +134,8 @@ export const timeline_text: ITimelineEntry[] = [
     description: "Bachelors dissertation project",
     stack: ["IMU", "Arduino", "MATLAB"],
     points: {
-      'Chosen Research Question': "How does shoe choice effect lower limb [shock / vibrations] while running?",
+      "Chosen Research Question":
+        "How does shoe choice effect lower limb [shock / vibrations] while running?",
       Experiment:
         "I recruited [n] people to run 3 laps of ~12min around a local park. Each time wearing a different design of shoe. Using an IMU, I measured accelerations at the top of the shin.",
       Analysis:
