@@ -13,7 +13,7 @@ export const Prose = (props: ITimelineEntryProse) => {
       {Object.entries(props).map(([key, entry]) => (
         <div
           key={id + key + "container"}
-          className='mx-4'
+          className='mx-4 mt-4'
         >
           <h5 className='font-bold italic'>{key}</h5>
           {typeof entry === "string" ? (

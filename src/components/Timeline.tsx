@@ -21,6 +21,8 @@ const Timeline = ({ entries }: { entries: ITimelineEntry[] }) => {
         if (
           [
             "Persistence",
+            "Auth Microservice",
+            "Document Resource Microservice",
             "Rho Technologies",
             "First Python Code",
             "Table Tennis Simulator",
@@ -82,7 +84,7 @@ const TimelineCard = ({
         </div>
       )}
       <div className='flex flex-row w-full items-center'>
-        <h4 className='w-32 justify-self-center rounded bg-gradient-to-tr from-green-700 to-green-500 p-1 text-center font-normal text-white shadow-md shadow-green-100 dark:shadow-slate-900'>
+        <h4 className='w-32 justify-self-center rounded bg-gradient-to-tr from-green-700 to-green-500 p-1 text-center font-normal text-white shadow-md dark:shadow-sm shadow-green-100 dark:shadow-slate-900'>
           {entry.date}
         </h4>
         <div className='flex flex-col ml-4'>
