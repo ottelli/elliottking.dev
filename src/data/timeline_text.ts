@@ -40,26 +40,33 @@ export const timeline_text: ITimelineEntry[] = [
   {
     title: "Auth Microservice",
     date: "Feb 2023",
-    description: "Written in Go, implementing JWTs, with OAuth2 and concurrency",
-    link: "github.com/ottelli/auth-service",
+    description:
+      "Written in Go, implementing JWTs, with OAuth2 and concurrency",
+    // link: "github.com/ottelli/auth-service",
     stack: ["Go", "GCP"],
     points: {
-      "Why did I make this?": "Building on the minimum-viable-product release of Persistence, I identified the authentication and authorization workflow as an area of potential improvement. The previous implimentation used access tokens to protect resource routes, but these were long lived and did not conform to OAuth2 standard. The logic was also part of a monolithic backend server that I wanted to break up for ease of maintenance and development.<br/><br/>I often build small toy projects to try out technologies I'm interested in, and had starting using Go in this sort of project whilst still building the first release of Persistence. Despite really enjoying the experience, I did not want to switch language part way through development.<br/><br/>Starting a new service gave me the opportunity to use Go in a larger project, and leverage its strengths in production code.",
-      "What I built": "The service consists of a REST API with endpoints to register and authenticate users. The client application recieves access tokens to include in resource requests. The service also implements refresh tokens, so that access tokens can be limited to short lifespans, improving security, while clients can obtain new ones to provide a seamless user experience.",
-      "What I learned": "When developing this service I tried to take advantage of the concurrency features in Go where they're useful, using goroutines to process requests once they're validated. I also enjoyed the clarity and robustness of static typing and the general error handling process in Go, especially for this kind of service where I always want to deliver clear, actionable feedback to a client. It can feel almost like Error-Driven-Development at times, but it gives a lot of confidence in the final application without using catch-all approaches as you might see in Python.",
-    }
+      "Why did I make this?":
+        "Building on the minimum-viable-product release of Persistence, I identified the authentication and authorization workflow as an area of potential improvement. The previous implimentation used access tokens to protect resource routes, but these were long lived and did not conform to OAuth2 standard. The logic was also part of a monolithic backend server that I wanted to break up for ease of maintenance and development.<br/><br/>I often build small toy projects to try out technologies I'm interested in, and had starting using Go in this sort of project whilst still building the first release of Persistence. Despite really enjoying the experience, I did not want to switch language part way through development.<br/><br/>Starting a new service gave me the opportunity to use Go in a larger project, and leverage its strengths in production code.",
+      "What I built":
+        "The service consists of a REST API with endpoints to register and authenticate users. The client application recieves access tokens to include in resource requests. The service also implements refresh tokens, so that access tokens can be limited to short lifespans, improving security, while clients can obtain new ones to provide a seamless user experience.",
+      "What I learned":
+        "When developing this service I tried to take advantage of the concurrency features in Go where they're useful, using goroutines to process requests once they're validated. I also enjoyed the clarity and robustness of static typing and the general error handling process in Go, especially for this kind of service where I always want to deliver clear, actionable feedback to a client. It can feel almost like Error-Driven-Development at times, but it gives a lot of confidence in the final application without using catch-all approaches as you might see in Python.",
+    },
   },
   {
     title: "Document Resource Microservice",
     date: "Nov 2022",
     description: "REST API to access document database resources",
-    link: "github.com/ottelli/persistence-document-service",
+    // link: "github.com/ottelli/persistence-document-service",
     stack: ["Python", "Flask", "GCP"],
     points: {
-      "Why did I make this?": "The first minimum-viable-product release of Persistence featured a monolithic backend server that, for the sake of maintenance and development, I decided to break up into microservices. Another limitation was the resource storage and retrieval architecture, which I chose to migrate into a document database to improve scalability.",
-      "What I built": "This service exposes a REST API giving a client application access to document resources hosted on Google Cloud. It's a part of the next iteration of the Persistence full-stack application which holds users training session data consisting of session metadata and sensor streams from sportswatches. The original monolith was written in Python and a core feature was the parsing, indexing, retrieval and filtering of this dataset. For this reason I chose to continue with Python and the Flask microframework for this service.<br/><br/>I made changes to the base resources and the way they are formatted for the client based on changes and new features I hope to implement on the client application. I also wanted to improve the performance to open possibilities for larger response payloads and more complex queries.",
-      "What I learned": "Having made programs with simple integrations into Google Cloud (for hosting etc.), this was my first complex application on Google Cloud with multiple APIs and services, and has spearheaded my migration of the full stack onto the platform. I feel this was a good service to start this migration as the Python SDK for GCP is extensive and well documented. At this point, I've built many applications with Python and Flask so it feels a lot like home and I'm built up familiarity with the wider suite of tools that surround these applications like ORMs and middlewares.",
-    }
+      "Why did I make this?":
+        "The first minimum-viable-product release of Persistence featured a monolithic backend server that, for the sake of maintenance and development, I decided to break up into microservices. Another limitation was the resource storage and retrieval architecture, which I chose to migrate into a document database to improve scalability.",
+      "What I built":
+        "This service exposes a REST API giving a client application access to document resources hosted on Google Cloud. It's a part of the next iteration of the Persistence full-stack application which holds users training session data consisting of session metadata and sensor streams from sportswatches. The original monolith was written in Python and a core feature was the parsing, indexing, retrieval and filtering of this dataset. For this reason I chose to continue with Python and the Flask microframework for this service.<br/><br/>I made changes to the base resources and the way they are formatted for the client based on changes and new features I hope to implement on the client application. I also wanted to improve the performance to open possibilities for larger response payloads and more complex queries.",
+      "What I learned":
+        "Having made programs with simple integrations into Google Cloud (for hosting etc.), this was my first complex application on Google Cloud with multiple APIs and services, and has spearheaded my migration of the full stack onto the platform. I feel this was a good service to start this migration as the Python SDK for GCP is extensive and well documented. At this point, I've built many applications with Python and Flask so it feels a lot like home and I'm built up familiarity with the wider suite of tools that surround these applications like ORMs and middlewares.",
+    },
   },
   {
     title: "Rho Technologies",
