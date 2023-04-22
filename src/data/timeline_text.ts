@@ -42,7 +42,7 @@ export const timeline_text: ITimelineEntry[] = [
     date: "Feb 2023",
     description:
       "Written in Go, implementing JWTs, with OAuth2 and concurrency",
-    // link: "github.com/ottelli/auth-service",
+    link: "github.com/ottelli/auth-service",
     stack: ["Go", "GCP"],
     points: {
       "Why did I make this?":
