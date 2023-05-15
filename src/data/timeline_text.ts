@@ -115,7 +115,7 @@ export const timeline_text: ITimelineEntry[] = [
     points: {
       "Research Question":
         "Can non-linearities in gait predict running economy?",
-      Experiment: "Recruited [n] people. Gas analysis + Gait analysis.",
+      Experiment: "Recruited 13 people. Gas analysis + Gait analysis.",
       Analysis: "Vectorisation. DFA. SampEnt.",
       Conclusion: [
         "Everyone has a velocity-variability sweet-spot in their running gait, which is most efficient for them.",
@@ -167,17 +167,18 @@ export const timeline_text: ITimelineEntry[] = [
     stack: ["IMU", "Arduino", "MATLAB"],
     points: {
       "Chosen Research Question":
-        "How does shoe choice effect lower limb [shock / vibrations] while running?",
+        "How does shoe choice effect lower limb shock while running?",
       Experiment:
-        "I recruited [n] people to run 3 laps of ~12min around a local park. Each time wearing a different design of shoe. Using an IMU, I measured accelerations at the top of the shin.",
+        "I recruited 5 people to run 3 laps of ~12min around a local park. Each time wearing a different type of shoe. Using an IMU, I measured accelerations at the top of the shin.",
       Analysis:
-        "I wrote a MATLAB script to; apply a high- and low-pass filter, detect peaks, and plot the result.<br/>To model the effects on the bones, I constructed a free body diagram, and input values from medical journal papers.<br/>Finally, I conducted a factorial analysis, [with factors such as] bone density, weight, speed of bone remodelling... , to provide context for the differences in shock between the shoes.",
+        "I wrote a MATLAB script to; apply a high- and low-pass filter, detect peaks, and plot the result.<br/>To model the effects on the bones, I constructed a free body diagram, and input values from medical journal papers.<br/>Finally, I conducted a factorial analysis, with factors such as bone density, weight, speed of bone remodelling and impact cycle frequency, to provide context for the differences in transmitted shock between the shoes.",
       Conclusion: [
-        "More foam on the shoe, less shock through the shin",
-        "Materials are <b>very</b> important",
-        "Shoes are the [x] principal component, and account for [y]% of the variance in total strain on the lower leg.",
+        "In general, more foam on the shoe, less shock through the shin.",
+        "But, materials are <b>very</b> important and a poor quality foam will offer little impact damping.",
+        "Shoes are the second principal component after body mass, and account for ~30% of the variance in total strain on the lower leg.",
       ],
-      Reflection: [""],
+      Reflection:
+        "This was my first project using IMUs, working with participants, and scripting in MATLAB, so I learnt a great deal from the entire process. There are aspects that I would do differently in follow up work, such as testing on multiple shorter courses with differing surfaces.",
     },
   },
 ]
