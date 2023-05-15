@@ -6,7 +6,7 @@ export const timeline_text: ITimelineEntry[] = [
     date: "Jan 2022 - ongoing",
     description:
       "Health and fitness app, with personal dashboard, interactive calendar, and data-driven insights.",
-    link: "www.trainpersistent.com/about",
+    link: "www.trainpersistent.com",
     stack: [
       "Go",
       "Python",
@@ -38,7 +38,7 @@ export const timeline_text: ITimelineEntry[] = [
     },
   },
   {
-    title: "Auth Microservice",
+    title: "Auth Service",
     date: "Feb 2023",
     description:
       "Written in Go, implementing JWTs, with OAuth2 and concurrency",
@@ -54,14 +54,14 @@ export const timeline_text: ITimelineEntry[] = [
     },
   },
   {
-    title: "Document Resource Microservice",
+    title: "Document Resource API",
     date: "Nov 2022",
     description: "REST API to access document database resources",
     // link: "github.com/ottelli/persistence-document-service",
     stack: ["Python", "Flask", "GCP"],
     points: {
       "Why did I make this?":
-        "The first minimum-viable-product release of Persistence featured a monolithic backend server that, for the sake of maintenance and development, I decided to break up into microservices. Another limitation was the resource storage and retrieval architecture, which I chose to migrate into a document database to improve scalability.",
+        "The first minimum-viable-product release of Persistence featured a monolithic backend server that, for the sake of maintenance and development, I decided to break up into independent APIs. Another limitation was the resource storage and retrieval architecture, which I chose to migrate into a document database to improve scalability.",
       "What I built":
         "This service exposes a REST API giving a client application access to document resources hosted on Google Cloud. It's a part of the next iteration of the Persistence full-stack application which holds users training session data consisting of session metadata and sensor streams from sportswatches. The original monolith was written in Python and a core feature was the parsing, indexing, retrieval and filtering of this dataset. For this reason I chose to continue with Python and the Flask microframework for this service.<br/><br/>I made changes to the base resources and the way they are formatted for the client based on changes and new features I hope to implement on the client application. I also wanted to improve the performance to open possibilities for larger response payloads and more complex queries.",
       "What I learned":
