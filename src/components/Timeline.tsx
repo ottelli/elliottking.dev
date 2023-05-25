@@ -18,26 +18,28 @@ const Timeline = ({ entries }: { entries: ITimelineEntry[] }) => {
     <section className='prose-headings prose-p prose flex w-full max-w-none flex-col items-center overflow-hidden bg-white px-4 py-8 dark:prose-invert dark:bg-slate-900'>
       <h1>Projects</h1>
       {entries.map((entry, idx) => {
-        if (
-          [
-            "Persistence",
-            "Auth Microservice",
-            "Document Resource Microservice",
-            "Rho Technologies",
-            "First Python Code",
-            "Table Tennis Simulator",
-          ].includes(entry.title)
-        ) {
-          return (
-            <ErrorBoundary key={"Error Rendering: " + entry.title + idx}>
-              <TimelineCard
-                key={entry.title + idx}
-                index={idx}
-                entry={entry}
-              />
-            </ErrorBoundary>
-          )
+        if ([""].includes(entry.title)) {
+          return
         }
+        // if (
+        //   [
+        //     "Persistence",
+        //     "Auth API",
+        //     "Document Resource API",
+        //     "Rho Technologies",
+        //     "First Python Code",
+        //     "Table Tennis Simulator",
+        //   ].includes(entry.title)
+        // ) {
+        return (
+          <ErrorBoundary key={"Error Rendering: " + entry.title + idx}>
+            <TimelineCard
+              key={entry.title + idx}
+              index={idx}
+              entry={entry}
+            />
+          </ErrorBoundary>
+        )
       })}
     </section>
   )

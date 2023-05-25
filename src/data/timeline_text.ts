@@ -20,7 +20,7 @@ export const timeline_text: ITimelineEntry[] = [
     ],
     points: {
       About:
-        "In my journey with Persistence, I have grown the project from a Matlab script analysing watch data I wrote in university, to static HTML, to a fully responsive progressive web app. As the project's complexity increased, I evolved the architecture and embraced new tools and technologies, learning on the job to take the project to the each new level. This process required extensive research, planning, iterative development, and effective utilization of my increasingly diverse skill set. Consequently, I have continually improved user experience across devices and platforms, striving to deliver a quality product that meets user expectations and the high standards I set myself.<br/><br/>Working independently, I manage the full lifecycle of product development, from ideation and planning to implementation and maintenance. This involves overseeing the architecture of the application, thinking deeply about the user experience, implementing best practices for optimal performance and secure authentication, while strategically allocating time to each aspect.",
+        "In my journey with Persistence, I have grown the project from a Matlab script analysing watch data I wrote in university, to static HTML, to a fully responsive progressive web app. As the project's complexity increased, I evolved the architecture and embraced new tools and technologies, learning on the job to take the project to each new level. This process required extensive research, planning, iterative development, and effective utilization of my increasingly diverse skill set. Consequently, I have continually improved user experience across devices and platforms, striving to deliver a quality product that meets user expectations and the high standards I set myself.<br/><br/>Working independently, I manage the full lifecycle of product development, from ideation and planning to implementation and maintenance. This involves overseeing the architecture of the application, thinking deeply about the user experience, implementing best practices for optimal performance and secure authentication, while strategically allocating time to each aspect.",
       Progress: [
         "Version 1 released in Jan 2023",
         "Fully responsive design for Web and Mobile, with offline available on Mobile through PWA features.",
@@ -38,7 +38,7 @@ export const timeline_text: ITimelineEntry[] = [
     },
   },
   {
-    title: "Auth Service",
+    title: "Auth API",
     date: "Feb 2023",
     description:
       "Written in Go, implementing JWTs, with OAuth2 and concurrency",
@@ -86,6 +86,13 @@ export const timeline_text: ITimelineEntry[] = [
       ],
     },
   },
+  // {
+  //   title: "Sportswatch Data Analysis",
+  //   date: "Feb 2021",
+  //   description: "<>",
+  //   stack: ["Python"],
+  //   points: {},
+  // },
   {
     title: "First Python Code",
     date: "Nov 2019",
@@ -115,28 +122,38 @@ export const timeline_text: ITimelineEntry[] = [
     points: {
       "Research Question":
         "Can non-linearities in gait predict running economy?",
-      Experiment: "Recruited 13 people. Gas analysis + Gait analysis.",
-      Analysis: "Vectorisation. DFA. SampEnt.",
+      Experiment:
+        "I conducted multiple trials with each of the 13 participants. There were two data streams output from the trials; gas analysis to assess metabolic efficiency, and gait analysis using an IMU to assess running mechanics.",
+      Analysis:
+        "In handling the wealth of data derived from the experiment, I employed several mathematical and computational tools. For time series analysis, I utilized Detrended Fluctuation Analysis (DFA) and Sample Entropy (SampEnt). DFA is a method used to identify long-term correlation properties in time series data. In the context of gait analysis, it allowed me to assess the structure of variability within and between the runners' strides. On the other hand, SampEnt was used to determine the informational complexity of gait dynamics over time, shedding light on the regularity and predictability of gait patterns. I used vectorization to greatly improve the efficiency of the processing pipeline.",
       Conclusion: [
-        "Everyone has a velocity-variability sweet-spot in their running gait, which is most efficient for them.",
-        "J-shape Function. Expert is shifted to the right, deeper and wider trough",
+        "The key findings from this research showed that every runner has a velocity-variability sweet-spot in their running gait, which is the most energy efficient for them. The relationship between velocity and variability forms a J-shaped function, with the most efficient point representing the trough of the 'J'.",
+        "Expert runners typically show a shift to the right on this graph, indicating higher velocity for the same variability, with a deeper and wider trough, suggesting a broader range of efficient speeds.",
+        "Both DFA and SampEnt correlated with metabolic efficiency, suggesting that an IMU could be used to estimate gait efficiency. This approach would open up possibilities for more research to be undertaken outside of the lab, and for the development of better training products able to integrate classic performance metrics with previously opaque factors like gait efficiency."
       ],
-      Reflection: ["Consequent Hypotheses: Adaptation to terrain."],
+      Reflection:
+        "This research prompted further hypotheses and questions, particularly around the topic of adaptation to terrain. The results suggest that training could be tailored to exploit the individual's sweet-spot and potentially enhance efficiency on different terrain types. It's an exciting avenue for future exploration in sports technology.",
     },
   },
   {
     title: "Computer Vision & Biofeedback",
     date: "Mar 2018",
     description: "Prototype and business plan",
-    stack: ["Android", "MATLAB"],
+    stack: ["Android"],
     points: {
-      "Assigned Task": "Help a sports injury, with technology.",
-      "Chosen Design Brief": "How to prevent back injuries from deadlifting?",
+      "Assigned Task": "Use technology to help prevent sports injuries.",
+      "Chosen Design Brief":
+        "We concentrated on mitigating the risk of back injuries that frequently occur from deadlifting incorrectly. Our aim was to devise a solution that was technologically innovative, practical, and beneficial to both individuals and the fitness community.",
       Solution:
-        "A camera purchased by gyms, placed to the side when deadlifting. Together with an Android app to give live feedback and record sessions.",
-      "Team Role": "I handled the financial plan and app design",
-      Conclusion: [""],
-      Reflection: "",
+        "Our proposed solution was a camera to be installed in gyms, with a companion app to provide real-time feedback on the user's form during deadlifts, assessing and alerting them to potential injury risk. The app would also record sessions for later review, enabling personal coaches or trainers to monitor and provide more detailed guidance.",
+      "Team Role":
+        "I took responsibility for two key aspects of the project. Firstly, I led the work on the business model and financial planning for the implementation of our solution, ensuring that our idea was not only innovative but also economically viable. Secondly, I designed the user interface and experience in Android Studio, thinking about how to clearly and effectively provide feedback to someone during their workout.",
+      Conclusion: [
+        "We were able to deliver a prototype computer-vision system and clearly communicate our ideas for the user experience, technical rationale behind our solution and our business plan.",
+        "The pitch for our solution was well-received. The innovative combination of real-time biofeedback, post-hoc review and business model, resonated with our audience, showing promise in terms of adoption and potential impact on injury prevention.",
+      ],
+      Reflection:
+        "The project was a significant learning experience for me. I strengthened my thinking and technical skills in designing and planning a user experience. However, some of the biggest takeaways came from the business side. I gained valuable insights into the process of financial planning for a tech solution.",
     },
   },
   {

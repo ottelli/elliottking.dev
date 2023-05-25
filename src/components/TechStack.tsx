@@ -3,11 +3,11 @@ import { useState } from "react"
 const TechStack = (props: { items: string[]; onlyIcons?: boolean }) => {
   const [hover, setHover] = useState<string | null>(null)
   return (
-    <div className='flex flex-row flex-wrap'>
+    <div className='flex flex-row flex-wrap justify-center'>
       {props.items.map((name, index) => (
         <div
           key={name + index}
-          className='prose relative m-1 flex flex-row items-center overflow-visible rounded-md bg-gradient-to-tr from-violet-600 to-violet-400 px-2 py-1 text-slate-50 shadow-md dark:shadow-sm shadow-violet-400 dark:text-slate-50 dark:shadow-slate-900'
+          className='prose relative m-1 flex flex-row items-center overflow-visible rounded-md bg-gradient-to-tr from-violet-600 to-violet-400 px-2 py-1 text-slate-50 shadow-md shadow-violet-400 dark:text-slate-50 dark:shadow-sm dark:shadow-slate-900'
           onMouseEnter={() => setHover(name)}
           onMouseLeave={() => setHover(null)}
         >
