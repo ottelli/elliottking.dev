@@ -2,11 +2,11 @@ const Header = () => {
   return (
     <header className='prose relative flex max-w-none flex-col items-center bg-white py-20 dark:bg-slate-600'>
       <img
-        src='/assets/profile-photo-round.png'
+        src='/assets/headshot.jpg'
         alt=''
         width={160}
         height={160}
-        className='mb-0'
+        className='mb-0 rounded-full'
       />
       <h1 className='mt-3 font-serif text-[2.5rem] font-light dark:text-white'>
         Elliott King

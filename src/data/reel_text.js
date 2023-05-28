@@ -7,10 +7,10 @@ const reel_text = [
   {
     title: "Full-Stack Development",
     prose:
-    "I initially learned to program in Matlab at university, but now I develop in <b>Python</b>, <b>TypeScript</b>, and <b>Go</b>, with a little <b>C/C++</b>.<br/><br/>I focus on creating exceptional user experiences through <b>progressive web apps</b>.",
+    "I initially learned to program in Matlab at university, but now I develop in <b>Python</b>, <b>TypeScript</b>, and <b>Go</b>.<br/><br/>I focus on creating exceptional user experiences through <b>progressive web apps</b>.",
   },
   {
-    prose: "My preferred stack right now is <b>Vite</b>, <b>TypeScript</b>, <b>React</b>, and <b>Redux</b> for crafting responsive, data-driven applications. With <b>Python-Flask</b> or <b>Go</b> to build robust microservices.<br/><br/>I implement secure <b>authentication</b>, am experienced with relational and document <b>databases</b> and employ robust <b>testing</b>."
+    prose: "My preferred stack right now is <b>Vite</b>, <b>TypeScript</b>, <b>React</b>, and <b>Redux</b> for crafting responsive, data-driven applications. With <b>Python-Flask</b> or <b>Go</b> to build robust APIs.<br/><br/>I implement secure <b>authentication</b>, am experienced with relational and document <b>databases</b> and employ both unit and end-to-end <b>testing</b>."
   },
   {
     title: "Sports Engineering",
@@ -18,7 +18,7 @@ const reel_text = [
   },
   {
     prose:
-      "I like to think about <b>improvisation</b> in movement, and how it relates to all around health.<br/><br/>Currently, I'm engaged in building <b>wearables and apps</b> to <b>measure, analyse and inform</b> users about their health and fitness."
+      "I like to think about <b>improvisation</b> in movement, and how it relates to all around health.<br/><br/>Currently, I'm engaged in building <b>apps and wearables</b> to <b>measure, analyse and inform</b> users about their health and fitness."
   },
 ];
 

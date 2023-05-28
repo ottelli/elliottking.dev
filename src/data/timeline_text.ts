@@ -8,15 +8,15 @@ export const timeline_text: ITimelineEntry[] = [
       "Health and fitness app, with personal dashboard, interactive calendar, and data-driven insights.",
     link: "www.trainpersistent.com",
     stack: [
-      "Go",
-      "Python",
-      "Flask",
+      // "Go",
+      // "Python",
+      // "Flask",
       "Vite",
       "TypeScript",
       "React",
       "Redux",
       "Sass",
-      "GCP",
+      // "GCP",
     ],
     points: {
       About:
@@ -40,9 +40,8 @@ export const timeline_text: ITimelineEntry[] = [
   {
     title: "Auth API",
     date: "Feb 2023",
-    description:
-      "Written in Go, implementing JWTs, with OAuth2 and concurrency",
-    link: "github.com/ottelli/auth-service",
+    description: "OAuth2 token authentication with concurrency",
+    link: "github.com/ottelli/persistence-auth-api",
     stack: ["Go", "GCP"],
     points: {
       "Why did I make this?":
@@ -56,8 +55,8 @@ export const timeline_text: ITimelineEntry[] = [
   {
     title: "Document Resource API",
     date: "Nov 2022",
-    description: "REST API to access document database resources",
-    // link: "github.com/ottelli/persistence-document-service",
+    description: "REST API for accessing document database",
+    link: "github.com/ottelli/persistence-sessions-api",
     stack: ["Python", "Flask", "GCP"],
     points: {
       "Why did I make this?":
@@ -71,7 +70,7 @@ export const timeline_text: ITimelineEntry[] = [
   {
     title: "Rho Technologies",
     date: "Oct 2022",
-    description: "Landing page for my business",
+    description: "Landing page for my sports technology business",
     link: "www.rhotechnologies.co.uk",
     stack: ["NextJS", "TypeScript", "Tailwind", "GCP"],
     points: {
@@ -129,7 +128,7 @@ export const timeline_text: ITimelineEntry[] = [
       Conclusion: [
         "The key findings from this research showed that every runner has a velocity-variability sweet-spot in their running gait, which is the most energy efficient for them. The relationship between velocity and variability forms a J-shaped function, with the most efficient point representing the trough of the 'J'.",
         "Expert runners typically show a shift to the right on this graph, indicating higher velocity for the same variability, with a deeper and wider trough, suggesting a broader range of efficient speeds.",
-        "Both DFA and SampEnt correlated with metabolic efficiency, suggesting that an IMU could be used to estimate gait efficiency. This approach would open up possibilities for more research to be undertaken outside of the lab, and for the development of better training products able to integrate classic performance metrics with previously opaque factors like gait efficiency."
+        "Both DFA and SampEnt correlated with metabolic efficiency, suggesting that an IMU could be used to estimate gait efficiency. This approach would open up possibilities for more research to be undertaken outside of the lab, and for the development of better training products able to integrate classic performance metrics with previously opaque factors like gait efficiency.",
       ],
       Reflection:
         "This research prompted further hypotheses and questions, particularly around the topic of adaptation to terrain. The results suggest that training could be tailored to exploit the individual's sweet-spot and potentially enhance efficiency on different terrain types. It's an exciting avenue for future exploration in sports technology.",
@@ -139,7 +138,7 @@ export const timeline_text: ITimelineEntry[] = [
     title: "Computer Vision & Biofeedback",
     date: "Mar 2018",
     description: "Prototype and business plan",
-    stack: ["Android"],
+    stack: ["Android", "MATLAB"],
     points: {
       "Assigned Task": "Use technology to help prevent sports injuries.",
       "Chosen Design Brief":

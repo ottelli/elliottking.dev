@@ -66,9 +66,10 @@ const TimelineCard = ({
       id={`card-${entry.title}`}
       ref={containerRef}
       className={`mx-0 my-4 flex w-full transform flex-col items-center rounded-3xl p-4 transition duration-500 sm:w-10/12 md:w-8/12 
-        ${isVisible || index === 0
-          ? "-transform-x-1/2 dark:via-indigp-200 bg-gradient-to-tr from-purple-200 via-indigo-100 to-blue-100 opacity-100 shadow-xl dark:from-purple-800 dark:via-indigo-900 dark:to-blue-900"
-          : "translate-x-1/2 bg-white opacity-0"
+        ${
+          isVisible || index === 0
+            ? "-transform-x-1/2 dark:via-indigp-200 bg-gradient-to-tr from-purple-200 via-indigo-100 to-blue-100 opacity-100 shadow-xl dark:from-purple-800 dark:via-indigo-900 dark:to-blue-900"
+            : "translate-x-1/2 bg-white opacity-0"
         }
       `}
     >
@@ -85,15 +86,41 @@ const TimelineCard = ({
           </svg>
         </div>
       )}
-      <div className='flex flex-row w-full items-center'>
-        <h4 className='w-32 justify-self-center rounded bg-gradient-to-tr from-green-700 to-green-500 p-1 text-center font-normal text-white shadow-md dark:shadow-sm shadow-green-100 dark:shadow-slate-900'>
+      <div className='flex w-full flex-row items-center'>
+        <h4 className='w-32 justify-self-center rounded bg-gradient-to-tr from-green-700 to-green-500 p-1 text-center font-normal text-white shadow-md shadow-green-100 dark:shadow-sm dark:shadow-slate-900'>
           {entry.date}
         </h4>
-        <div className='flex flex-col ml-4'>
+        <div className='ml-4 flex flex-col'>
           <h2>{entry.title}</h2>
           {entry.link && (
-            <a href={`https://${entry.link}`}>
-              <h6 className=''>{entry.link}</h6>
+            <a
+              href={`https://${entry.link}`}
+              className='flex w-max items-center'
+            >
+              {entry.link.startsWith("github") ? (
+                <>
+                  <h6>GitHub Repo</h6>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='16'
+                    height='16'
+                    fill='currentColor'
+                    viewBox='0 0 16 16'
+                    className='ml-1'
+                  >
+                    <path
+                      fillRule='evenodd'
+                      d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z'
+                    />
+                    <path
+                      fillRule='evenodd'
+                      d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z'
+                    />
+                  </svg>
+                </>
+              ) : (
+                <h6>{entry.link}</h6>
+              )}
             </a>
           )}
         </div>
@@ -112,3 +139,4 @@ const TimelineCard = ({
     </div>
   )
 }
+
